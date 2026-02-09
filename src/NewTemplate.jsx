@@ -18,7 +18,7 @@ const NewTemplate = () => {
 
         try {
             const token = localStorage.getItem('auth_token');
-            const response = await fetch('http://gmailbackend.up.railway.app/api/mail/template', {
+            const response = await fetch('https://gmailbackend.up.railway.app/api/mail/template', {
                 method: 'POST',
                 headers: { 'Authorization': `Basic ${token}` },
                 body: data,
