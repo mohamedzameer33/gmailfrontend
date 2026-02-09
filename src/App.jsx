@@ -18,7 +18,7 @@ const Login = ({ onLoginSuccess }) => {
     setErr('');
     const token = btoa(`${creds.user}:${creds.pass}`);
     try {
-      const res = await fetch('http://gmailbackend.up.railway.app/api/mail/templates', {
+      const res = await fetch('https://gmailbackend.up.railway.app/api/mail/templates', {
         headers: { 'Authorization': `Basic ${token}` }
       });
       if (res.ok) {
