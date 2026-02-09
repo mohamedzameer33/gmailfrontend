@@ -12,7 +12,7 @@ const EmailHome = () => {
   const fetchTemplates = async () => {
     const token = localStorage.getItem('auth_token');
     try {
-      const res = await fetch('http://gmailbackend.up.railway.app/api/mail/templates', {
+      const res = await fetch('https://gmailbackend.up.railway.app/api/mail/templates', {
         headers: { 'Authorization': `Basic ${token}` }
       });
       if (res.ok) setTemplates(await res.json());
@@ -25,7 +25,7 @@ const EmailHome = () => {
     
     const token = localStorage.getItem('auth_token');
     try {
-      const res = await fetch(`http://gmailbackend.up.railway.app/api/mail/template/${id}`, {
+      const res = await fetch(`https://gmailbackend.up.railway.app/api/mail/template/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Basic ${token}` }
       });
@@ -50,7 +50,7 @@ const EmailHome = () => {
 
     try {
       const token = localStorage.getItem('auth_token');
-      const res = await fetch('http://gmailbackend.up.railway.app/api/mail/send', {
+      const res = await fetch('https://gmailbackend.up.railway.app/api/mail/send', {
         method: 'POST',
         headers: { 'Authorization': `Basic ${token}` },
         body: data
